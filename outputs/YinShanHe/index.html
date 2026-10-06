@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一印山河 · 青绿画境</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="experience" aria-label="木版套印交互体验">
+  <div id="scene" aria-label="印坊与纸上山水三维场景"></div>
+  <div class="vignette"></div><div class="grain"></div>
+  <header>
+    <a class="brand" href="#" aria-label="一印山河 首页"><span class="seal">山<br>河</span><span>一印山河<small>A LANDSCAPE IN PRINT</small></span></a>
+    <nav aria-label="体验控制"><a href="creator.html" style="color:inherit;align-self:center;font-size:12px;text-decoration:none;white-space:nowrap">自由制版 ↗</a><button id="art-view" aria-pressed="false">青绿画境</button><button id="inspect" aria-pressed="false">器物细看</button><button id="sound" aria-pressed="false">声音 · 关</button><button id="fullscreen">全屏</button><button id="reset">重新开始</button></nav>
+  </header>
+  <section id="intro" class="intro">
+    <p class="eyebrow">木版水印 · 交互艺术实验</p>
+    <h1>一纸之间，<br>山河有声。</h1>
+    <p class="intro-copy">套准、上墨、覆纸、刷印、揭纸。<br>让手中的一抹墨色，成为眼前的一片山河。</p>
+    <button id="start" class="primary">入坊 · 开始套印 <span>↗</span></button>
+    <button id="art-enter" class="secondary art-enter">先入画境 ↗</button>
+    <a href="creator.html" class="secondary art-enter" style="display:inline-block;text-decoration:none">自由制版 Demo ↗</a>
+    <p class="intro-note">约 3 分钟体验 · 鼠标 / 触屏操作</p>
+  </section>
+  <aside id="chapter" class="chapter" hidden>
+    <p class="eyebrow" id="chapter-index">第一版 / 01</p>
+    <h1 id="chapter-title">落山</h1>
+    <p id="chapter-poem">石青入纸，<br>远山初醒。</p>
+    <div class="chapters" aria-label="套印进度">
+      <div data-chapter="0" class="active"><span>壹</span><p>山形<small>群峰 · 石青</small></p><i></i></div>
+      <div data-chapter="1"><span>贰</span><p>林影<small>松间 · 苍绿</small></p><i></i></div>
+      <div data-chapter="2"><span>叁</span><p>人家<small>一桥 · 朱砂</small></p><i></i></div>
+    </div>
+  </aside>
+  <section id="controls" class="controls" hidden aria-label="当前操作">
+    <div class="control-head"><span id="step-label">01 / 套准</span><span id="value-label">等待对版</span></div>
+    <h2 id="action-title">让版与纸，恰好相遇。</h2>
+    <p id="instruction">拖动纸上的色版，让两组角标重合。</p>
+    <div id="progress-wrap" class="progress"><div id="progress-bar"></div></div>
+    <div class="actions"><button id="assist" class="secondary">辅助套准</button><button id="advance" class="primary" disabled>落版 →</button></div>
+    <p class="key-hint" id="key-hint">方向键也可微调 · 对齐后点击落版</p>
+  </section>
+  <div id="message" class="message" role="status" aria-live="polite"></div>
+  <div id="brush" class="brush" hidden><i></i></div>
+  <section id="art-note" hidden aria-label="青绿画境观赏控制">
+    <div class="art-title"><p>一印山河 · 青绿习作</p><h1>云深见朱阙</h1><span>石上生皴 · 林间染翠 · 云外有人家</span></div>
+    <div class="art-actions"><p>拖动画面环视 · 滚轮缩放 · 方向键移步</p><div><button id="art-rotate" aria-pressed="false">缓缓游览</button><button id="art-reset">回到此景</button><button id="art-save">留一帧</button><button id="art-quality" aria-pressed="true">画质 · 高清</button><button id="art-exit">返回印台 ↗</button></div></div>
+  </section>
+  <aside id="tool-note" class="tool-note" hidden><p class="eyebrow">器物参考 / 荣宝斋木版水印</p><h2>棕丝成刷，梨木成版。</h2><p>后：上墨棕刷，束扎刷身、散开的棕丝。<br>中：元宝形上刷，木芯、绳缠与紧绳木签。<br>前：木柄刻刀，区分平刃与弧口。</p><p class="source-note">依据工坊实拍与非遗资料重建的简化模型。<br><a href="https://www.harvardvisualchina.com/rongbaozhai-workshop" target="_blank" rel="noopener">看工坊实拍 ↗</a> · <a href="https://www.ihchina.cn/printing_tool_detail/25930.html" target="_blank" rel="noopener">看上刷资料 ↗</a></p><div class="actions"><button id="inspect-save" class="secondary">保存器物画面</button><button id="inspect-close" class="secondary">返回印台</button></div></aside>
+  <footer><span>以木为版 · 以水为墨 · 以纸为境</span><span id="view-hint">在一方印台，遇见一座山河</span><span>青绿画境 / 0.5</span></footer>
+  <dialog id="export-dialog"><h2 id="export-title">印稿预览</h2><img id="export-image" alt="一印山河导出画面"><p>点击下载 PNG，或长按／右键图片保存。</p><div class="actions"><a id="export-download" class="primary" download>下载 PNG ↓</a><button id="export-close" class="secondary">返回印台</button></div></dialog>
+  <section id="error" class="error" hidden role="alert"><h2>三维场景暂时未能加载</h2><p id="error-detail"></p><button onclick="location.reload()">重新加载</button></section>
+</main>
+<script src="vendor/three.min.js"></script><script src="craft-tools.js"></script><script src="assets/pigment-texture.js"></script><script src="ink-architecture.js"></script><script src="site-layout.js"></script><script src="ink-landscape.js"></script><script src="app.js"></script>
+</body></html>
+
